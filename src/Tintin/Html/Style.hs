@@ -13,7 +13,7 @@ data Style
 style :: Project.Info -> Text
 style info = toText . render $ do
   let (themeColorName, themeColorCode) = themeColor $ Project.color info
-  
+
   html ? do
     height (pct 100)
     minHeight (pct 100)
@@ -24,9 +24,9 @@ style info = toText . render $ do
     fontFamily [Project.bodyFont info] [sansSerif]
     fontSize (em 1)
     overflowX hidden
-    
+
     "a" ? do
-      color $ shade 0.3 themeColorCode  
+      color $ shade 0.3 themeColorCode
     "a:hover" ? do
       color $ shade 0.1 themeColorCode
 
@@ -40,7 +40,7 @@ style info = toText . render $ do
   h3 ? fontSize (em 1.563)
 
   blockquote ? do
-    borderLeft solid (px 4) "#DDD"
+    borderLeft (px 4) solid "#DDD"
     paddingLeft (rem 1)
     color codeTextColor
 
@@ -213,7 +213,7 @@ style info = toText . render $ do
 
   ".tintin-bg-70" ? do
     backgroundColor $ shade 0.2 themeColorCode
- 
+
   (element $ ".tintin-bg-" <> themeColorName) ? do
     backgroundColor themeColorCode
 
@@ -237,17 +237,17 @@ style info = toText . render $ do
     color $ contrastingColorFor themeColorCode
     backgroundColor $ shade 0.2 themeColorCode
     textAlign center
-    
+
     a ? do
       color $ shade 0.6 themeColorCode
     "a:hover" ? do
       textDecoration none
       color $ shade 0.7 themeColorCode
-      
+
     ".author" ? do
       marginTop (em 1.2)
       fontSize (em 1.2)
-      
+
     ".site-generated-message" ? do
       fontSize (em 0.8)
       marginTop (em 3)
@@ -298,13 +298,13 @@ footerTextColor :: Color
 footerTextColor = rgba 0 0 0 0.30
 
 contrastingColorFor :: Color -> Color
-contrastingColorFor color = 
+contrastingColorFor color =
   case soulFor color of
     Light    -> blackish
     Darkness -> white
-    
+
 shade :: Float -> Color -> Color
-shade percent color = 
+shade percent color =
   case soulFor color of
     Light    -> Clay.darken percent color
     Darkness -> Clay.lighten percent color
