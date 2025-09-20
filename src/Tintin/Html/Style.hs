@@ -33,7 +33,7 @@ style info = toText . render $ do
   forM_ (zip [(0::Double)..] [h1, h2, h3]) $ \(n, x) -> x ? do
     fontFamily [Project.titleFont info] [sansSerif]
     fontWeight $ weight $ Project.titleFontWeight info
-    fontSize (em (2.441 Core.** n))
+    fontSize (em (realToFrac $ 2.441 Core.** n))
 
   h1 ? fontSize (em 2.441)
   h2 ? fontSize (em 1.953)
