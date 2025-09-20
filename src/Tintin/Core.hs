@@ -11,7 +11,7 @@ where
 
 import Universum as Exported hiding (log)
 
-import Data.Has as Exported
+import Data.Has as Exported hiding (Lens)
 import System.Directory as Exported
 import System.IO.Temp as Exported
 import System.Process as Exported

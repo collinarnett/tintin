@@ -7,7 +7,8 @@ where
 
 import qualified Data.Text as T
 import Tintin.Core
-require Tintin.Capabilities.Logging
+import Tintin.Capabilities.Logging (Logging)
+import qualified Tintin.Capabilities.Logging as Logging
 
 data Errors
 

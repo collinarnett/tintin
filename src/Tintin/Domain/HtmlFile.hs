@@ -1,11 +1,16 @@
 module Tintin.Domain.HtmlFile where
 
 import Tintin.Core
-require Tintin.Capabilities.Filesystem
-require Tintin.Capabilities.Process
-require Tintin.Domain.DocumentationFile
-require Tintin.Domain.FrontMatter
-require Data.Text
+import Tintin.Capabilities.Filesystem (Filesystem)
+import qualified Tintin.Capabilities.Filesystem as Filesystem
+import Tintin.Capabilities.Process (Process)
+import qualified Tintin.Capabilities.Process as Process
+import Tintin.Domain.DocumentationFile (DocumentationFile)
+import qualified Tintin.Domain.DocumentationFile as DocumentationFile
+import Tintin.Domain.FrontMatter (FrontMatter)
+import qualified Tintin.Domain.FrontMatter as FrontMatter
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 
 data BuildTool

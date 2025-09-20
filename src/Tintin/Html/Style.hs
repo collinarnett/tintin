@@ -5,7 +5,8 @@ import Tintin.Core as Core hiding (( & ), rem, (|>))
 import Clay
 import qualified Clay.Media as Media
 
-require Tintin.Domain.Project
+import Tintin.Domain.Project (Project)
+import qualified Tintin.Domain.Project as Project
 
 data Style
 

@@ -6,16 +6,25 @@ where
 
 import Tintin.Core
 
-require Tintin.Capabilities.Logging
-require Tintin.Capabilities.Filesystem
-require Tintin.Capabilities.Process
-require Tintin.Parse
-require Tintin.Render
-require Tintin.Errors
-require Tintin.ConfigurationLoading
-require Tintin.Domain.HtmlFile
+import Tintin.Capabilities.Logging (Logging)
+import qualified Tintin.Capabilities.Logging as Logging
+import Tintin.Capabilities.Filesystem (Filesystem)
+import qualified Tintin.Capabilities.Filesystem as Filesystem
+import Tintin.Capabilities.Process (Process)
+import qualified Tintin.Capabilities.Process as Process
+import Tintin.Parse (Parse)
+import qualified Tintin.Parse as Parse
+import Tintin.Render (Render)
+import qualified Tintin.Render as Render
+import Tintin.Errors (Errors)
+import qualified Tintin.Errors as Errors
+import Tintin.ConfigurationLoading (ConfigurationLoading)
+import qualified Tintin.ConfigurationLoading as ConfigurationLoading
+import Tintin.Domain.HtmlFile (HtmlFile)
+import qualified Tintin.Domain.HtmlFile as HtmlFile
 
-require Data.Text
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 
 

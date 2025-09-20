@@ -4,10 +4,13 @@ import Lucid
 
 import Data.Maybe
 import Tintin.Core
-require Tintin.Html.Style
-require Tintin.Domain.Project
+import Tintin.Html.Style (Style)
+import qualified Tintin.Html.Style as Style
+import Tintin.Domain.Project (Project)
+import qualified Tintin.Domain.Project as Project
 
-require Data.Text
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 data Templating
 

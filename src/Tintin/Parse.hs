@@ -5,10 +5,14 @@ module Tintin.Parse
 where
 
 import  Tintin.Core
-require Tintin.Capabilities.Logging
-require Tintin.Capabilities.Filesystem
-require Tintin.Domain.DocumentationFile
-require Tintin.Errors
+import Tintin.Capabilities.Logging (Logging)
+import qualified Tintin.Capabilities.Logging as Logging
+import Tintin.Capabilities.Filesystem (Filesystem)
+import qualified Tintin.Capabilities.Filesystem as Filesystem
+import Tintin.Domain.DocumentationFile (DocumentationFile)
+import qualified Tintin.Domain.DocumentationFile as DocumentationFile
+import Tintin.Errors (Errors)
+import qualified Tintin.Errors as Errors
 
 
 data Parse

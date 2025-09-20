@@ -4,7 +4,8 @@ import qualified Data.Frontmatter as FMParser
 
 import Tintin.Core
 
-require Tintin.Domain.FrontMatter
+import Tintin.Domain.FrontMatter (FrontMatter)
+import qualified Tintin.Domain.FrontMatter as FrontMatter
 
 
 newtype Filename   = Filename Text

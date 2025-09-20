@@ -4,13 +4,19 @@ module Tintin.ConfigurationLoading
   )
 where
 
-require Tintin.Errors
-require Tintin.Capabilities.Logging
-require Tintin.Capabilities.Filesystem
-require Tintin.Domain.HtmlFile
-require Tintin.Domain.Project
+import Tintin.Errors (Errors)
+import qualified Tintin.Errors as Errors
+import Tintin.Capabilities.Logging (Logging)
+import qualified Tintin.Capabilities.Logging as Logging
+import Tintin.Capabilities.Filesystem (Filesystem)
+import qualified Tintin.Capabilities.Filesystem as Filesystem
+import Tintin.Domain.HtmlFile (HtmlFile)
+import qualified Tintin.Domain.HtmlFile as HtmlFile
+import Tintin.Domain.Project (Project)
+import qualified Tintin.Domain.Project as Project
 
-require Data.Text
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 import Tintin.Core
 import qualified Universum.Unsafe as Unsafe

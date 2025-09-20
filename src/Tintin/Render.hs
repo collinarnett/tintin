@@ -2,17 +2,27 @@ module Tintin.Render where
 
 import Tintin.Core
 
-require Tintin.Capabilities.Logging
-require Tintin.Capabilities.Filesystem
-require Tintin.Capabilities.Process
-require Tintin.Domain.HtmlFile
-require Tintin.Domain.DocumentationFile
-require Tintin.Domain.Project
-require Tintin.Html.Templating
-require Tintin.Errors
+import Tintin.Capabilities.Logging (Logging)
+import qualified Tintin.Capabilities.Logging as Logging
+import Tintin.Capabilities.Filesystem (Filesystem)
+import qualified Tintin.Capabilities.Filesystem as Filesystem
+import Tintin.Capabilities.Process (Process)
+import qualified Tintin.Capabilities.Process as Process
+import Tintin.Domain.HtmlFile (HtmlFile)
+import qualified Tintin.Domain.HtmlFile as HtmlFile
+import Tintin.Domain.DocumentationFile (DocumentationFile)
+import qualified Tintin.Domain.DocumentationFile as DocumentationFile
+import Tintin.Domain.Project (Project)
+import qualified Tintin.Domain.Project as Project
+import Tintin.Html.Templating (Templating)
+import qualified Tintin.Html.Templating as Templating
+import Tintin.Errors (Errors)
+import qualified Tintin.Errors as Errors
 
-require Data.Map
-require Data.Text
+import Data.Map (Map)
+import qualified Data.Map as Map
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 data Render
 

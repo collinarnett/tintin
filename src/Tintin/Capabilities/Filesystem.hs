@@ -21,7 +21,8 @@ import Tintin.Core hiding (list, local, readFile, writeFile)
 import qualified Tintin.Core as Core
 import Tintin.Capabilities
 
-require Data.Text
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 
 data Filesystem
