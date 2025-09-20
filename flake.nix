@@ -14,6 +14,17 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ git-hooks-nix.flakeModule ];
+      flake.overlays.default = final: prev: {
+        haskell = prev.haskell // {
+          packages = prev.haskell.packages // {
+            ghc984 = prev.haskell.packages.ghc984.extend (
+              hFinal: hPrev: {
+                tintin = hFinal.callCabal2nix "tintin" ./. { };
+              }
+            );
+          };
+        };
+      };
       systems = [ "x86_64-linux" ];
       perSystem =
         {
