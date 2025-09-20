@@ -98,7 +98,7 @@ test-suite tintin-test
       test
   ghc-options:
       -threaded
-    , -rtsopts
-    , -with-rtsopts=-N
+      -rtsopts
+      -with-rtsopts=-N
   build-depends:
       tintin
