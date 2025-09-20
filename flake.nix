@@ -37,6 +37,7 @@
               haskell-language-server
             ];
           };
+          packages.default = pkgs.haskell.packages.${ghc}.callCabal2nix "tintin" ./. { };
         };
     };
 
