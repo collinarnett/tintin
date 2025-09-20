@@ -46,6 +46,24 @@ library
   import: common-options
   hs-source-dirs:
       src
+  exposed-modules:
+      Tintin
+    , Tintin.Capabilities
+    , Tintin.Capabilities.Filesystem
+    , Tintin.Capabilities.Logging
+    , Tintin.Capabilities.Process
+    , Tintin.ConfigurationLoading
+    , Tintin.Core
+    , Tintin.Domain
+    , Tintin.Domain.DocumentationFile
+    , Tintin.Domain.FrontMatter
+    , Tintin.Domain.HtmlFile
+    , Tintin.Domain.Project
+    , Tintin.Errors
+    , Tintin.Html.Style
+    , Tintin.Html.Templating
+    , Tintin.Parse
+    , Tintin.Render
   build-depends:
       text
     , directory
