@@ -30,14 +30,23 @@ main :: IO ()
 main = do
   opts <- getRecord "Tintin, the tutorial website generator"
   case opts of
-    Run outputDirectory verbose shouldUseCabal -> do
+    Run outputDirectory verbose True -> do
       let outputDir = fromMaybe ".stack-work/tintin/rendered/" outputDirectory
       let logger     = if verbose
                        then Logging.stdOut
                        else Logging.mute
       let filesystem = Filesystem.local
       let process    = Process.local
-      runEffects ( runApp shouldUseCabal $ OutputDirectory outputDir ) (logger, filesystem, process)
+      runEffects ( runApp True $ OutputDirectory outputDir ) (logger, filesystem, process)
+
+    Run outputDirectory verbose False -> do
+      let outputDir = fromMaybe ".stack-work/tintin/rendered/" outputDirectory
+      let logger     = if verbose
+                       then Logging.stdOut
+                       else Logging.mute
+      let filesystem = Filesystem.local
+      let process    = Process.local
+      runEffects ( runApp False $ OutputDirectory outputDir ) (logger, filesystem, process)
 
     Publish verbose documentationDirectory -> do
       let outputDir = fromMaybe ".stack-work/tintin/rendered/" documentationDirectory
