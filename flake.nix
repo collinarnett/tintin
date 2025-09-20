@@ -19,7 +19,7 @@
           packages = prev.haskell.packages // {
             ghc984 = prev.haskell.packages.ghc984.extend (
               hFinal: hPrev: {
-                tintin = hFinal.callCabal2nix "tintin" ./. { };
+                tintin = hFinal.callCabal2nix "tintin" (prev.nix-gitignore.gitignoreSource [ ] ./.) { };
               }
             );
           };
@@ -48,7 +48,11 @@
               haskell-language-server
             ];
           };
-          packages.default = pkgs.haskell.packages.${ghc}.callCabal2nix "tintin" ./. { };
+          packages.default = pkgs.haskell.packages.${ghc}.callCabal2nix "tintin" (
+            pkgs.nix-gitignore.gitignoreSource
+            [ ]
+            ./.
+          ) { };
         };
     };
 
