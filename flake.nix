@@ -31,6 +31,11 @@
             packages = ps: [
               (ps.callCabal2nix "tintin" ./. { })
             ];
+            nativeBuildInputs = with pkgs; [
+              cabal-install
+              haskellPackages.cabal-fmt
+              haskell-language-server
+            ];
           };
         };
     };
