@@ -104,4 +104,4 @@ test-suite tintin-test
     , -rtsopts
     , -with-rtsopts=-N
   build-depends:
-      tintinn
+      tintin
