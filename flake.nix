@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    git-hooks-nix.url = "github:cachix/git-hooks.nix";
   };
 
   outputs =
@@ -10,16 +9,14 @@
       self,
       nixpkgs,
       flake-parts,
-      git-hooks-nix,
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ git-hooks-nix.flakeModule ];
       flake.overlays.default = final: prev: {
         haskell = prev.haskell // {
           packages = prev.haskell.packages // {
             ghc984 = prev.haskell.packages.ghc984.extend (
               hFinal: hPrev: {
-                tintin = hFinal.callCabal2nix "tintin" (prev.nix-gitignore.gitignoreSource [ ] ./.) { };
+                tintin = hFinal.callCabal2nix "tintin" ./. { };
               }
             );
           };
@@ -48,11 +45,7 @@
               haskell-language-server
             ];
           };
-          packages.default = pkgs.haskell.packages.${ghc}.callCabal2nix "tintin" (
-            pkgs.nix-gitignore.gitignoreSource
-            [ ]
-            ./.
-          ) { };
+          packages.default = pkgs.haskell.packages.${ghc}.callCabal2nix "tintin" ./. { };
         };
     };
 
